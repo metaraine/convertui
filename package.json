@@ -22,6 +22,7 @@
     "body-parser": "~1",
     "express": "~4",
     "jade": "~1",
+    "multer": "^0.1.7",
     "newrelic": "~1",
     "rsvp": "^3.0.16"
   },

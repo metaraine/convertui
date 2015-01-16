@@ -13,4 +13,18 @@ module.exports =
 			resolve convert(input, req.body)
 
 		promisedOutput.then (value)->
-			res.send 200, value
+			res.send value
+
+	upload: (req, res)->
+
+		# wrap in a promise to handle Promises or scalar values
+		promisedOutput = new Promise (resolve, reject)->
+			for name,fileInfo of req.files
+				# console.log 'fileInfo', fileInfo.buffer.toString()
+				resolve convert(fileInfo.buffer)
+
+		promisedOutput.then (value)->
+			# console.log 'body', req.body, 'query', req.query, 'files', req.files
+			res.send
+				success: true
+				output: value

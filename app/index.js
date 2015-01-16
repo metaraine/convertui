@@ -1,9 +1,11 @@
 (function() {
-  var app, bodyParser, express, indexController, server;
+  var app, bodyParser, express, indexController, multer, server;
 
   express = require('express');
 
   bodyParser = require('body-parser');
+
+  multer = require('multer');
 
   indexController = require('./controllers/index.js');
 
@@ -21,9 +23,15 @@
     extended: false
   }));
 
+  app.use(multer({
+    inMemory: true
+  }));
+
   app.get('/', indexController.index);
 
   app.post('/convert', indexController.convert);
+
+  app.post('/upload', indexController.upload);
 
   server = app.listen(process.env.port || 9882, function() {
     return console.log('Express server listening on port ' + server.address().port);

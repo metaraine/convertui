@@ -4,7 +4,7 @@
   Promise = require('rsvp').Promise;
 
   module.exports = function(input, options) {
-    return input + '!';
+    return input.toString().toUpperCase() + '!!!';
   };
 
 }).call(this);
