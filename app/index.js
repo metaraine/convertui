@@ -23,6 +23,8 @@
 
   app.get('/', indexController.index);
 
+  app.post('/convert', indexController.convert);
+
   server = app.listen(process.env.port || 9882, function() {
     return console.log('Express server listening on port ' + server.address().port);
   });
