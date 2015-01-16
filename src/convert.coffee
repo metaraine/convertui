@@ -1,5 +1,3 @@
-Promise = require('rsvp').Promise
-
 # input: input text
 # options: any other form values sent in the POST
 module.exports = (input, options)->
