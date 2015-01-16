@@ -8,10 +8,15 @@
       return res.render('index');
     },
     convert: function(req, res) {
-      var input;
+      var input, promisedOutput;
       input = req.body.input;
       delete req.body.input;
-      return res.send(200, convert(input, req.body));
+      promisedOutput = new Promise(function(resolve, reject) {
+        return resolve(convert(input, req.body));
+      });
+      return promisedOutput.then(function(value) {
+        return res.send(200, value);
+      });
     }
   };
 

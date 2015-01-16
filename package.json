@@ -13,16 +13,17 @@
     "node": "0.10.x"
   },
   "scripts": {
-  	"start": "node app/",
+    "start": "node app/",
     "test": "./node_modules/mocha/bin/mocha",
     "browser": "browserify -s $npm_package_name -o browser.js .",
     "pingheroku": "heroku info -s | grep web_url | cut -d= -f2 | xargs -I{} curl {} -w '%{http_code}' -so /dev/null"
   },
   "dependencies": {
+    "body-parser": "~1",
     "express": "~4",
     "jade": "~1",
-    "body-parser": "~1",
-    "newrelic": "~1"
+    "newrelic": "~1",
+    "rsvp": "^3.0.16"
   },
   "keywords": [
     "data conversion",

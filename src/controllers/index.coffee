@@ -7,4 +7,10 @@ module.exports =
 	convert: (req, res)->
 		input = req.body.input
 		delete req.body.input # remove from req.body to save memory
-		res.send 200, convert(input, req.body)
+
+		# wrap in a promise to handle Promises or scalar values
+		promisedOutput = new Promise (resolve, reject)->
+			resolve convert(input, req.body)
+
+		promisedOutput.then (value)->
+			res.send 200, value
