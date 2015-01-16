@@ -1,4 +1,4 @@
-# generator-convertui
+# convertui
 [![Build Status](https://travis-ci.org/metaraine/convertui.svg?branch=master)](https://travis-ci.org/metaraine/convertui)
 
 > Node server and web front-end for arbitrary data conversion.

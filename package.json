@@ -1,9 +1,9 @@
 {
-  "name": "generator-convertui",
+  "name": "convertui",
   "version": "0.0.0",
   "description": "Node server and web front-end for arbitrary data conversion.",
   "license": "ISC",
-  "repository": "metaraine/generator-convertui",
+  "repository": "metaraine/convertui",
   "author": {
     "name": "Raine Lourie",
     "email": "raine@collegecoding.com",
