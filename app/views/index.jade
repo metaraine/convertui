@@ -1,6 +1,18 @@
 extends layout
 
 block content
-	h1 Convert _____ to ______
-	form(action='/convert')
-		textarea(name='input')
+	.container
+		.row
+			.col-xs-12
+				.page-header
+					h1 Convert _____ to ______
+
+		form.form-horizontal(method='POST' action='/convert')
+			.row
+				.col-xs-12
+						p Enter input data:
+						textarea.space-below-md.form-control(name='input')
+
+			.row
+				.col-xs-12
+					input.btn.btn-lg.btn-primary(type='submit' value='Convert')

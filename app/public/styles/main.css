@@ -1,38 +1,20 @@
 /* line 1, /Users/raine/projects/convertui/src/public/styles/main.sass */
 body {
   padding-bottom: 50px;
-  font-family: 'Helvetica Neue', Arial;
-  font-weight: 100;
   font-smoothing: antialiased; }
 
-/* line 7, /Users/raine/projects/convertui/src/public/styles/main.sass */
-h1, h2, h3, h4 {
-  font-family: 'Helvetica Neue', Arial;
-  font-weight: 100;
-  text-align: center; }
-
-/* line 12, /Users/raine/projects/convertui/src/public/styles/main.sass */
-h1 {
-  font-weight: 700;
-  font-size: 42px; }
-
-/* line 16, /Users/raine/projects/convertui/src/public/styles/main.sass */
-p {
-  font-size: 18px; }
-
-/* line 19, /Users/raine/projects/convertui/src/public/styles/main.sass */
-b {
-  font-weight: 200; }
-
-/* line 22, /Users/raine/projects/convertui/src/public/styles/main.sass */
-.page-header {
-  border: none;
-  margin-bottom: 50px; }
-
-/* line 26, /Users/raine/projects/convertui/src/public/styles/main.sass */
-.page-subtitle {
-  text-align: center; }
-
-/* line 29, /Users/raine/projects/convertui/src/public/styles/main.sass */
+/* line 5, /Users/raine/projects/convertui/src/public/styles/main.sass */
 .container {
   max-width: 760px; }
+
+/* line 8, /Users/raine/projects/convertui/src/public/styles/main.sass */
+.space-below-sm {
+  margin-bottom: 10px; }
+
+/* line 10, /Users/raine/projects/convertui/src/public/styles/main.sass */
+.space-below-md {
+  margin-bottom: 20px; }
+
+/* line 12, /Users/raine/projects/convertui/src/public/styles/main.sass */
+.space-below-lg {
+  margin-bottom: 50px; }
