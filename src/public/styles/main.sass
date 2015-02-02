@@ -1,9 +1,56 @@
+@import '../../../app/public/scripts/components/material-colors/dist/colors.sass'
+
 body
-  padding-bottom: 50px
-  font-smoothing: antialiased
+	padding-bottom: 20px
+	font-smoothing: antialiased
+	color: hsl(0, 0, 13%)
+	font-family: 'Helvetica Neue'
+
+.page-header
+	color: white
+	background-color: $md-blue-500
+	min-height: 150px
+	padding: 20px 40px
+	margin: 0 0 50px 0
+	border: 0
+	position: relative
+	h1
+		font-weight: 200
+		font-size: 39px
+		position: absolute
+		padding-bottom: 20px;
+		bottom: 0
 
 .container
-  max-width: 760px
+	max-width: 760px
+	padding: 0 40px
+
+.button, .qq-upload-button
+	color: white
+	background-color: $md-blue-a200
+	border: 0
+
+.button-instructions
+	color: white
+	background-color: $md-light-blue-a200
+	overflow: auto
+	display: block
+	line-height: 35px
+	padding-left: 10px
+
+.box
+	box-shadow: 1px 1px 1px #555
+
+.icon-convert
+	width: 64px
+	height: 64px
+
+.relative
+	position: relative
+
+.pull-down
+	position: absolute
+	bottom: 0
 
 .space-below-sm
 	margin-bottom: 10px

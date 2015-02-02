@@ -1,20 +1,73 @@
-/* line 1, /Users/raine/projects/convertui/src/public/styles/main.sass */
+/* line 3, /Users/raine/projects/convertui/src/public/styles/main.sass */
 body {
-  padding-bottom: 50px;
-  font-smoothing: antialiased; }
+  padding-bottom: 20px;
+  font-smoothing: antialiased;
+  color: #212121;
+  font-family: 'Helvetica Neue'; }
 
-/* line 5, /Users/raine/projects/convertui/src/public/styles/main.sass */
+/* line 9, /Users/raine/projects/convertui/src/public/styles/main.sass */
+.page-header {
+  color: white;
+  background-color: #2196f3;
+  min-height: 150px;
+  padding: 20px 40px;
+  margin: 0 0 50px 0;
+  border: 0;
+  position: relative; }
+  /* line 17, /Users/raine/projects/convertui/src/public/styles/main.sass */
+  .page-header h1 {
+    font-weight: 200;
+    font-size: 39px;
+    position: absolute;
+    padding-bottom: 20px;
+    bottom: 0; }
+
+/* line 24, /Users/raine/projects/convertui/src/public/styles/main.sass */
 .container {
-  max-width: 760px; }
+  max-width: 760px;
+  padding: 0 40px; }
 
-/* line 8, /Users/raine/projects/convertui/src/public/styles/main.sass */
+/* line 28, /Users/raine/projects/convertui/src/public/styles/main.sass */
+.button, .qq-upload-button {
+  color: white;
+  background-color: #448aff;
+  border: 0; }
+
+/* line 33, /Users/raine/projects/convertui/src/public/styles/main.sass */
+.button-instructions {
+  color: white;
+  background-color: #40c4ff;
+  overflow: auto;
+  display: block;
+  line-height: 35px;
+  padding-left: 10px; }
+
+/* line 41, /Users/raine/projects/convertui/src/public/styles/main.sass */
+.box {
+  box-shadow: 1px 1px 1px #555; }
+
+/* line 44, /Users/raine/projects/convertui/src/public/styles/main.sass */
+.icon-convert {
+  width: 64px;
+  height: 64px; }
+
+/* line 48, /Users/raine/projects/convertui/src/public/styles/main.sass */
+.relative {
+  position: relative; }
+
+/* line 51, /Users/raine/projects/convertui/src/public/styles/main.sass */
+.pull-down {
+  position: absolute;
+  bottom: 0; }
+
+/* line 55, /Users/raine/projects/convertui/src/public/styles/main.sass */
 .space-below-sm {
   margin-bottom: 10px; }
 
-/* line 10, /Users/raine/projects/convertui/src/public/styles/main.sass */
+/* line 57, /Users/raine/projects/convertui/src/public/styles/main.sass */
 .space-below-md {
   margin-bottom: 20px; }
 
-/* line 12, /Users/raine/projects/convertui/src/public/styles/main.sass */
+/* line 59, /Users/raine/projects/convertui/src/public/styles/main.sass */
 .space-below-lg {
   margin-bottom: 50px; }

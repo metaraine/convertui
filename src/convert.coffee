@@ -4,4 +4,4 @@ module.exports = (input, options)->
 
 	# process the input and return a value
 	# also supports returning a promise for asynchronous processing
-	input.toString().toUpperCase() + '!!!'
+	'The input was converted to uppercase: ' + input.toString().toUpperCase()

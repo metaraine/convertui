@@ -1,6 +1,6 @@
 (function() {
   module.exports = function(input, options) {
-    return input.toString().toUpperCase() + '!!!';
+    return 'The input was converted to uppercase: ' + input.toString().toUpperCase();
   };
 
 }).call(this);

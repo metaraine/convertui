@@ -114,11 +114,11 @@ gulp.task 'images', ->
 		.pipe gulp.dest(config.dest_img)
 
 # copy bower scripts
-gulp.task 'bower', ->
-	gulp.src(config.src_bower)
-		# .pipe(embedlr())
-		.pipe(gulp.dest(config.dest_bower))
-		.pipe livereload(server, auto:false)
+# gulp.task 'bower', ->
+# 	gulp.src(config.src_bower)
+# 		# .pipe(embedlr())
+# 		.pipe(gulp.dest(config.dest_bower))
+# 		.pipe livereload(server, auto:false)
 
 # watch html
 gulp.task 'views', ->
@@ -130,7 +130,13 @@ gulp.task 'views', ->
 
 # clean '.dist/'
 gulp.task 'clean', ->
-	gulp.src(['./app'], read: false)
+	gulp.src([
+		config.dest_views,
+		config.dest_css,
+		'app/*.js',
+		'app/controllers/*.js',
+		'app/public/scripts/*.js'
+	], read: false)
 	.pipe clean()
 
 
@@ -141,26 +147,29 @@ gulp.task 'open', ->
 			url: 'http://localhost:' + config.http_port
 
 
+gulp.task 'watch', (callback) ->
+
+	gulp.watch(config.src_sass, ['styles'])._watcher.on 'all', livereload
+	# gulp.watch(config.src_plugins, ['plugins'])._watcher.on 'all', livereload
+	# gulp.watch(config.src_bower, ['bower'])._watcher.on 'all', livereload
+	gulp.watch(config.src_client_scripts, ['client_scripts'])._watcher.on 'all', livereload
+	gulp.watch([config.src_all_scripts, '!' + config.src_client_scripts], ['server_scripts'])._watcher.on 'all', livereload
+	gulp.watch(config.src_views, ['views'])._watcher.on 'all', livereload
+	gulp.watch(config.src_img, ['images'])._watcher.on 'all', livereload
+
 # default task -- run 'gulp' from cli
 gulp.task 'default', (callback) ->
 
 	runSequence 'clean', [
 		# 'plugins'
-		'bower'
+		# 'bower'
 		'client_scripts'
 		'server_scripts'
 		'styles'
 		'images'
 		'views'
-	], callback
+	], 'watch', callback
 
 	server.listen config.livereload_port
 	# http.createServer(ecstatic(root: 'dist/')).listen config.http_port
 
-	gulp.watch(config.src_sass, ['styles'])._watcher.on 'all', livereload
-	# gulp.watch(config.src_plugins, ['plugins'])._watcher.on 'all', livereload
-	gulp.watch(config.src_bower, ['bower'])._watcher.on 'all', livereload
-	gulp.watch(config.src_client_scripts, ['client_scripts'])._watcher.on 'all', livereload
-	gulp.watch([config.src_all_scripts, '!' + config.src_client_scripts], ['server_scripts'])._watcher.on 'all', livereload
-	gulp.watch(config.src_views, ['views'])._watcher.on 'all', livereload
-	gulp.watch(config.src_img, ['images'])._watcher.on 'all', livereload
