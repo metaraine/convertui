@@ -3,9 +3,11 @@ body {
   padding-bottom: 20px;
   font-smoothing: antialiased;
   color: #212121;
-  font-family: 'Helvetica Neue'; }
+  font-family: 'Helvetica Neue';
+  font-weight: 100;
+  font-size: 16px; }
 
-/* line 9, /Users/raine/projects/convertui/src/public/styles/main.sass */
+/* line 11, /Users/raine/projects/convertui/src/public/styles/main.sass */
 .page-header {
   color: white;
   background-color: #2196f3;
@@ -14,7 +16,7 @@ body {
   margin: 0 0 50px 0;
   border: 0;
   position: relative; }
-  /* line 17, /Users/raine/projects/convertui/src/public/styles/main.sass */
+  /* line 19, /Users/raine/projects/convertui/src/public/styles/main.sass */
   .page-header h1 {
     font-weight: 200;
     font-size: 39px;
@@ -22,21 +24,21 @@ body {
     padding-bottom: 20px;
     bottom: 0; }
 
-/* line 24, /Users/raine/projects/convertui/src/public/styles/main.sass */
+/* line 26, /Users/raine/projects/convertui/src/public/styles/main.sass */
 .container {
   max-width: 760px;
   padding: 0 40px; }
 
-/* line 28, /Users/raine/projects/convertui/src/public/styles/main.sass */
+/* line 30, /Users/raine/projects/convertui/src/public/styles/main.sass */
 .button, .qq-upload-button {
   color: white;
   background-color: #448aff;
   border: 0; }
-  /* line 32, /Users/raine/projects/convertui/src/public/styles/main.sass */
+  /* line 34, /Users/raine/projects/convertui/src/public/styles/main.sass */
   .button:hover, .qq-upload-button:hover {
     background-color: #2979ff; }
 
-/* line 35, /Users/raine/projects/convertui/src/public/styles/main.sass */
+/* line 37, /Users/raine/projects/convertui/src/public/styles/main.sass */
 .button-instructions {
   color: white;
   background-color: #40c4ff;
@@ -45,39 +47,39 @@ body {
   line-height: 35px;
   padding: 0 10px; }
 
-/* line 43, /Users/raine/projects/convertui/src/public/styles/main.sass */
+/* line 45, /Users/raine/projects/convertui/src/public/styles/main.sass */
 .box {
   box-shadow: 1px 1px 1px #555; }
 
-/* line 46, /Users/raine/projects/convertui/src/public/styles/main.sass */
+/* line 48, /Users/raine/projects/convertui/src/public/styles/main.sass */
 .icon-convert {
   width: 64px;
   height: 64px;
   opacity: 0.13; }
 
-/* line 51, /Users/raine/projects/convertui/src/public/styles/main.sass */
+/* line 53, /Users/raine/projects/convertui/src/public/styles/main.sass */
 .relative {
   position: relative; }
 
-/* line 54, /Users/raine/projects/convertui/src/public/styles/main.sass */
+/* line 56, /Users/raine/projects/convertui/src/public/styles/main.sass */
 .stick-down {
   position: absolute;
   bottom: 0; }
 
-/* line 58, /Users/raine/projects/convertui/src/public/styles/main.sass */
+/* line 60, /Users/raine/projects/convertui/src/public/styles/main.sass */
 .stick-right {
   position: absolute;
   right: 10px; }
 
-/* line 62, /Users/raine/projects/convertui/src/public/styles/main.sass */
+/* line 64, /Users/raine/projects/convertui/src/public/styles/main.sass */
 .space-below-sm {
   margin-bottom: 10px; }
 
-/* line 64, /Users/raine/projects/convertui/src/public/styles/main.sass */
+/* line 66, /Users/raine/projects/convertui/src/public/styles/main.sass */
 .space-below-md {
   margin-bottom: 20px; }
 
-/* line 66, /Users/raine/projects/convertui/src/public/styles/main.sass */
+/* line 68, /Users/raine/projects/convertui/src/public/styles/main.sass */
 .space-below-lg {
   margin-bottom: 50px; }
 
@@ -85,15 +87,15 @@ body {
   .above500 {
     display: none; } }
 
-/* line 74, /Users/raine/projects/convertui/src/public/styles/main.sass */
+/* line 76, /Users/raine/projects/convertui/src/public/styles/main.sass */
 .qq-uploader {
   width: 105px; }
 
-/* line 77, /Users/raine/projects/convertui/src/public/styles/main.sass */
+/* line 79, /Users/raine/projects/convertui/src/public/styles/main.sass */
 .qq-upload-drop-area {
   background-color: #ef9a9a;
   width: auto; }
-  /* line 80, /Users/raine/projects/convertui/src/public/styles/main.sass */
+  /* line 82, /Users/raine/projects/convertui/src/public/styles/main.sass */
   .qq-upload-drop-area span {
     position: static;
     margin: 0;
@@ -101,10 +103,10 @@ body {
     line-height: 35px;
     white-space: nowrap; }
 
-/* line 88, /Users/raine/projects/convertui/src/public/styles/main.sass */
+/* line 90, /Users/raine/projects/convertui/src/public/styles/main.sass */
 .qq-upload-list {
   display: none; }
 
-/* line 91, /Users/raine/projects/convertui/src/public/styles/main.sass */
+/* line 93, /Users/raine/projects/convertui/src/public/styles/main.sass */
 .qq-upload-list li.qq-upload-success {
   background-color: #ef9a9a; }
