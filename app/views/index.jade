@@ -40,10 +40,12 @@ block content
 				.col-xs-12
 					.box.space-below-md
 						span#fine-uploader.pull-left
-						.button-instructions 
-							.pull-right
+						.button-instructions.relative
+							.stick-right
 								a#reset(href='#') reset
-							span or drag-and-drop a file, or paste text:
+							span 
+								span.above500 or drag-and-drop a file, 
+								| or paste text:
 
 					#input-and-convert
 						textarea#input.space-below-md.form-control(name='input' rows='5')

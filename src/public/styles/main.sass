@@ -51,9 +51,13 @@ body
 .relative
 	position: relative
 
-.pull-down
+.stick-down
 	position: absolute
 	bottom: 0
+
+.stick-right
+	position: absolute
+	right: 10px
 
 .space-below-sm
 	margin-bottom: 10px
@@ -61,6 +65,12 @@ body
 	margin-bottom: 20px
 .space-below-lg
 	margin-bottom: 50px
+
+// responsive classes
+.above500
+	@media (max-width: 500px)
+		display: none
+
 
 // fineuploader overrides
 .qq-uploader
