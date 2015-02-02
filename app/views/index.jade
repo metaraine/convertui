@@ -34,7 +34,7 @@ block content
 						a.qq-upload-delete-selector.qq-upload-delete(href='#') Delete
 						span.qq-upload-status-text-selector.qq-upload-status-text
 
-		form.form-horizontal(method='POST' action='/convert')
+		form#form-convert.form-horizontal(method='POST' action='/convert')
 
 			.row
 				.col-xs-12
@@ -50,4 +50,4 @@ block content
 
 			.row
 				.col-xs-12
-						textarea#output.space-below-md.form-control(name='output' rows='5')
+						textarea#output.space-below-md.form-control(name='output' rows='5' readonly)

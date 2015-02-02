@@ -49,25 +49,26 @@ body {
 /* line 44, /Users/raine/projects/convertui/src/public/styles/main.sass */
 .icon-convert {
   width: 64px;
-  height: 64px; }
+  height: 64px;
+  opacity: 0.13; }
 
-/* line 48, /Users/raine/projects/convertui/src/public/styles/main.sass */
+/* line 49, /Users/raine/projects/convertui/src/public/styles/main.sass */
 .relative {
   position: relative; }
 
-/* line 51, /Users/raine/projects/convertui/src/public/styles/main.sass */
+/* line 52, /Users/raine/projects/convertui/src/public/styles/main.sass */
 .pull-down {
   position: absolute;
   bottom: 0; }
 
-/* line 55, /Users/raine/projects/convertui/src/public/styles/main.sass */
+/* line 56, /Users/raine/projects/convertui/src/public/styles/main.sass */
 .space-below-sm {
   margin-bottom: 10px; }
 
-/* line 57, /Users/raine/projects/convertui/src/public/styles/main.sass */
+/* line 58, /Users/raine/projects/convertui/src/public/styles/main.sass */
 .space-below-md {
   margin-bottom: 20px; }
 
-/* line 59, /Users/raine/projects/convertui/src/public/styles/main.sass */
+/* line 60, /Users/raine/projects/convertui/src/public/styles/main.sass */
 .space-below-lg {
   margin-bottom: 50px; }

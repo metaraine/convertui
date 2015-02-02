@@ -6,4 +6,6 @@ $ ->
 		$('#output').val(response.output)
 
 	$('#form-convert').on 'submit', ()->
+		$.post '/convert', $(this).serialize(), (data)->
+			$('#output').val(data)
 		false
