@@ -33,7 +33,7 @@
 
   app.post('/upload', indexController.upload);
 
-  server = app.listen(process.env.port || 9882, function() {
+  server = app.listen(process.env.PORT || 9882, function() {
     return console.log('Express server listening on port ' + server.address().port);
   });
 

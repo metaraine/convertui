@@ -15,5 +15,5 @@ app.get '/', indexController.index
 app.post '/convert', indexController.convert
 app.post '/upload', indexController.upload
 
-server = app.listen process.env.port || 9882, ->
+server = app.listen process.env.PORT || 9882, ->
 	console.log 'Express server listening on port ' + server.address().port
