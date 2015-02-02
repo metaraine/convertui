@@ -38,15 +38,17 @@ block content
 
 			.row
 				.col-xs-12
-					p.box
+					.box.space-below-md
 						span#fine-uploader.pull-left
-						span.button-instructions or drag-and-drop a file, or paste text:
-					textarea#input.space-below-md.form-control(name='input' rows='5')
+						.button-instructions 
+							.pull-right
+								a#reset(href='#') reset
+							span or drag-and-drop a file, or paste text:
 
-			.row
-				.col-xs-12
-					p.text-center
-						input.icon-convert(type='image' alt='Convert' title='Convert' src='/scripts/components/material-design-icons/action/2x_web/ic_system_update_tv_black_48dp.png')
+					#input-and-convert
+						textarea#input.space-below-md.form-control(name='input' rows='5')
+						p.text-center
+							input.icon-convert(type='image' alt='Convert' title='Convert' src='/scripts/components/material-design-icons/action/2x_web/ic_system_update_tv_black_48dp.png')
 
 			.row
 				.col-xs-12

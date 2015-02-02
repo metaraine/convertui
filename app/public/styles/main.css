@@ -32,43 +32,70 @@ body {
   color: white;
   background-color: #448aff;
   border: 0; }
+  /* line 32, /Users/raine/projects/convertui/src/public/styles/main.sass */
+  .button:hover, .qq-upload-button:hover {
+    background-color: #2979ff; }
 
-/* line 33, /Users/raine/projects/convertui/src/public/styles/main.sass */
+/* line 35, /Users/raine/projects/convertui/src/public/styles/main.sass */
 .button-instructions {
   color: white;
   background-color: #40c4ff;
   overflow: auto;
   display: block;
   line-height: 35px;
-  padding-left: 10px; }
+  padding: 0 10px; }
 
-/* line 41, /Users/raine/projects/convertui/src/public/styles/main.sass */
+/* line 43, /Users/raine/projects/convertui/src/public/styles/main.sass */
 .box {
   box-shadow: 1px 1px 1px #555; }
 
-/* line 44, /Users/raine/projects/convertui/src/public/styles/main.sass */
+/* line 46, /Users/raine/projects/convertui/src/public/styles/main.sass */
 .icon-convert {
   width: 64px;
   height: 64px;
   opacity: 0.13; }
 
-/* line 49, /Users/raine/projects/convertui/src/public/styles/main.sass */
+/* line 51, /Users/raine/projects/convertui/src/public/styles/main.sass */
 .relative {
   position: relative; }
 
-/* line 52, /Users/raine/projects/convertui/src/public/styles/main.sass */
+/* line 54, /Users/raine/projects/convertui/src/public/styles/main.sass */
 .pull-down {
   position: absolute;
   bottom: 0; }
 
-/* line 56, /Users/raine/projects/convertui/src/public/styles/main.sass */
+/* line 58, /Users/raine/projects/convertui/src/public/styles/main.sass */
 .space-below-sm {
   margin-bottom: 10px; }
 
-/* line 58, /Users/raine/projects/convertui/src/public/styles/main.sass */
+/* line 60, /Users/raine/projects/convertui/src/public/styles/main.sass */
 .space-below-md {
   margin-bottom: 20px; }
 
-/* line 60, /Users/raine/projects/convertui/src/public/styles/main.sass */
+/* line 62, /Users/raine/projects/convertui/src/public/styles/main.sass */
 .space-below-lg {
   margin-bottom: 50px; }
+
+/* line 65, /Users/raine/projects/convertui/src/public/styles/main.sass */
+.qq-uploader {
+  width: 105px; }
+
+/* line 68, /Users/raine/projects/convertui/src/public/styles/main.sass */
+.qq-upload-drop-area {
+  background-color: #ef9a9a;
+  width: auto; }
+  /* line 71, /Users/raine/projects/convertui/src/public/styles/main.sass */
+  .qq-upload-drop-area span {
+    position: static;
+    margin: 0;
+    padding: 0 10px;
+    line-height: 35px;
+    white-space: nowrap; }
+
+/* line 79, /Users/raine/projects/convertui/src/public/styles/main.sass */
+.qq-upload-list {
+  display: none; }
+
+/* line 82, /Users/raine/projects/convertui/src/public/styles/main.sass */
+.qq-upload-list li.qq-upload-success {
+  background-color: #ef9a9a; }
