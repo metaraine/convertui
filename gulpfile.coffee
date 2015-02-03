@@ -34,8 +34,8 @@ config =
 	destViews: 'app/views'
 
 	# styles
-	srcSass: 'src/public/styles/**/*.s*ss'
 	srcCss: 'src/public/styles/**/*.css'
+	srcSass: 'src/public/styles/**/*.s*ss'
 	destCss: 'app/public/styles'
 	cssConcatTarget: 'out.css'
 
