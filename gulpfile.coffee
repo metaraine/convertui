@@ -3,6 +3,7 @@ gutil =        require('gulp-util')
 coffee =       require('gulp-coffee')
 http =         require('http')
 runSequence =  require('run-sequence')
+es =  				 require('event-stream')
 sass =         require('gulp-sass')
 autoprefixer = require('gulp-autoprefixer')
 minifycss =    require('gulp-minify-css')
@@ -25,114 +26,120 @@ bowerrc = JSON.parse(fs.readFileSync('.bowerrc'))
 server = lr()
 
 config =
-	http_port: 9882
-	livereload_port: '35729'
+	httpPort: 9882
+	livereloadPort: '35729'
 
 	# markup
-	src_views: 'src/views/**/*'
-	dest_views: 'app/views'
+	srcViews: 'src/views/**/*'
+	destViews: 'app/views'
 
 	# styles
-	src_sass: 'src/public/styles/**/*.s*ss'
-	dest_css: 'app/public/styles'
+	srcSass: 'src/public/styles/**/*.s*ss'
+	srcCss: 'src/public/styles/**/*.css'
+	destCss: 'app/public/styles'
+	cssConcatTarget: 'out.css'
 
 	# scripts
-	src_all_scripts: 'src/**/*.coffee'
-	src_client_scripts: 'src/public/**/*.coffee'
-	src_client_exclude: '!public/**/*.coffee'
-	dest_client_scripts: 'app/public/scripts'
-	js_concat_target: 'main.js'
-	dest_server_scripts: 'app'
+	srcAllScripts: 'src/**/*.coffee'
+	srcClientScripts: 'src/public/**/*.coffee'
+	srcClientExclude: '!public/**/*.coffee'
+	destClientScripts: 'app/public/scripts'
+	jsConcatTarget: 'main.js'
+	destServerScripts: 'app'
 
 	# bower
-	src_bower: bowerrc.directory + '/**/*'
-	dest_bower: 'app/public/scripts/components'
+	srcBower: bowerrc.directory + '/**/*'
+	destBower: 'app/public/scripts/components'
 
 	# plugins
-	# src_plugins: 'src/assets/scripts/plugins/*.js'
-	# dest_plugins: 'dist/assets/scripts'
-	# plugins_concat: 'plugins.js'
+	# srcPlugins: 'src/assets/scripts/plugins/*.js'
+	# destPlugins: 'dist/assets/scripts'
+	# pluginsConcat: 'plugins.js'
 
 	# images
-	src_img: 'src/public/images/**/*.*'
-	dest_img: 'app/public/images'
+	srcImg: 'src/public/images/**/*.*'
+	destImg: 'app/public/images'
 
 
 # sass task
 gulp.task 'styles', ->
-	gulp.src(config.src_sass)
+	css = gulp.src(config.srcCss)
+	sass = gulp.src(config.srcSass)
 		.pipe(sass(style: 'expanded', sourceComments: 'normal'))
+
+	es.merge(css, sass)
+		.pipe(concat(config.cssConcatTarget))
 		.pipe(autoprefixer('last 2 version', 'safari 5', 'ie 7', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-		.pipe(gulp.dest(config.dest_css))
+		.pipe(gulp.dest(config.destCss))
 		.pipe(rename(suffix: '.min'))
 		.pipe(minifycss())
-		.pipe(gulp.dest(config.dest_css))
+		.pipe(gulp.dest(config.destCss))
 		.pipe livereload(server, auto:false)
 
 
 # compile client-side coffeescript, concat, & minify js
-gulp.task 'client_scripts', ->
-	gulp.src(config.src_client_scripts)
+gulp.task 'clientScripts', ->
+	gulp.src(config.srcClientScripts)
 		.pipe(coffee().on('error', gutil.log))
-		.pipe(concat(config.js_concat_target))
+		.pipe(concat(config.jsConcatTarget))
 		.pipe(ngAnnotate())
-		.pipe(gulp.dest(config.dest_client_scripts))
+		.pipe(gulp.dest(config.destClientScripts))
 		.pipe(rename(suffix: '.min'))
 		.pipe(uglify())
-		.pipe(gulp.dest(config.dest_client_scripts))
+		.pipe(gulp.dest(config.destClientScripts))
 		.pipe livereload(server, auto:false)
 
 # compile server-side coffeescript
-gulp.task 'server_scripts', ->
-	gulp.src(config.src_all_scripts)
-		.pipe(filter(['**/*', config.src_client_exclude]))
+gulp.task 'serverScripts', ->
+	gulp.src(config.srcAllScripts)
+		.pipe(filter(['**/*', config.srcClientExclude]))
 		.pipe(coffee().on('error', gutil.log))
 		# .pipe(jshint())
 		# .pipe(jshint.reporter('default'))
-		.pipe(gulp.dest(config.dest_server_scripts))
+		.pipe(gulp.dest(config.destServerScripts))
 		.pipe livereload(server, auto:false)
 
 
 # # concat & minify plugins
 # gulp.task 'plugins', ->
 # 	# ".jshintrc"
-# 	gulp.src(config.src_plugins)
+# 	gulp.src(config.srcPlugins)
 # 		.pipe(jshint())
 # 		.pipe(jshint.reporter('default'))
-# 		.pipe(concat(config.plugins_concat))
-# 		.pipe(gulp.dest(config.dest_plugins))
+# 		.pipe(concat(config.pluginsConcat))
+# 		.pipe(gulp.dest(config.destPlugins))
 # 		.pipe(rename(suffix: '.min'))
 # 		.pipe(uglify())
-# 		.pipe(gulp.dest(config.dest_app))
+# 		.pipe(gulp.dest(config.destApp))
 # 		.pipe livereload(server)
 
 
 # minify images
 gulp.task 'images', ->
-	gulp.src(config.src_img)
+	gulp.src(config.srcImg)
 		.pipe(imagemin())
-		.pipe gulp.dest(config.dest_img)
+		.pipe gulp.dest(config.destImg)
 
 # copy bower scripts
 # gulp.task 'bower', ->
-# 	gulp.src(config.src_bower)
+# 	gulp.src(config.srcBower)
 # 		# .pipe(embedlr())
-# 		.pipe(gulp.dest(config.dest_bower))
+# 		.pipe(gulp.dest(config.destBower))
 # 		.pipe livereload(server, auto:false)
 
 # watch html
 gulp.task 'views', ->
-	gulp.src(config.src_views)
+	gulp.src(config.srcViews)
 		# .pipe(embedlr())
-		.pipe(gulp.dest(config.dest_views))
+		.pipe(gulp.dest(config.destViews))
 		.pipe livereload(server, auto:false)
 
 
 # clean '.dist/'
 gulp.task 'clean', ->
 	gulp.src([
-		config.dest_views,
-		config.dest_css,
+		config.destViews,
+		config.destCss,
 		'app/*.js',
 		'app/controllers/*.js',
 		'app/public/scripts/*.js'
@@ -144,18 +151,18 @@ gulp.task 'clean', ->
 gulp.task 'open', ->
 	gulp.src('app/index.js') # dummy source, but must match a real file to run
 		.pipe open '',
-			url: 'http://localhost:' + config.http_port
+			url: 'http://localhost:' + config.httpPort
 
 
 gulp.task 'watch', (callback) ->
 
-	gulp.watch(config.src_sass, ['styles'])._watcher.on 'all', livereload
-	# gulp.watch(config.src_plugins, ['plugins'])._watcher.on 'all', livereload
-	# gulp.watch(config.src_bower, ['bower'])._watcher.on 'all', livereload
-	gulp.watch(config.src_client_scripts, ['client_scripts'])._watcher.on 'all', livereload
-	gulp.watch([config.src_all_scripts, '!' + config.src_client_scripts], ['server_scripts'])._watcher.on 'all', livereload
-	gulp.watch(config.src_views, ['views'])._watcher.on 'all', livereload
-	gulp.watch(config.src_img, ['images'])._watcher.on 'all', livereload
+	gulp.watch([config.srcSass, config.srcCss], ['styles']).Watcher.on 'all', livereload
+	# gulp.watch(config.srcPlugins, ['plugins']).Watcher.on 'all', livereload
+	# gulp.watch(config.srcBower, ['bower']).Watcher.on 'all', livereload
+	gulp.watch(config.srcClientScripts, ['clientScripts']).Watcher.on 'all', livereload
+	gulp.watch([config.srcAllScripts, '!' + config.srcClientScripts], ['serverScripts']).Watcher.on 'all', livereload
+	gulp.watch(config.srcViews, ['views']).Watcher.on 'all', livereload
+	gulp.watch(config.srcImg, ['images']).Watcher.on 'all', livereload
 
 # default task -- run 'gulp' from cli
 gulp.task 'default', (callback) ->
@@ -163,13 +170,13 @@ gulp.task 'default', (callback) ->
 	runSequence 'clean', [
 		# 'plugins'
 		# 'bower'
-		'client_scripts'
-		'server_scripts'
+		'clientScripts'
+		'serverScripts'
 		'styles'
 		'images'
 		'views'
 	], 'watch', callback
 
-	server.listen config.livereload_port
-	# http.createServer(ecstatic(root: 'dist/')).listen config.http_port
+	server.listen config.livereloadPort
+	# http.createServer(ecstatic(root: 'dist/')).listen config.httpPort
 

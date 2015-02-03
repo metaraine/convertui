@@ -34,6 +34,7 @@
   "devDependencies": {
     "browserify": "~6",
     "coffee-script": "~1",
+    "event-stream": "^3.2.2",
     "gulp": "~3",
     "gulp-autoprefixer": "~2",
     "gulp-cache": "~0.2",
@@ -55,9 +56,9 @@
     "gulp-uglify": "~1",
     "gulp-util": "~3",
     "imagemin": "~0.1",
-    "run-sequence": "~1",
-    "tiny-lr": "~0.1",
     "insist": "*",
-    "mocha": "*"
+    "mocha": "*",
+    "run-sequence": "~1",
+    "tiny-lr": "~0.1"
   }
 }
