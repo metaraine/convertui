@@ -22,7 +22,6 @@ ngAnnotate =   require('gulp-ng-annotate')
 lr =           require('tiny-lr')
 fs = 					 require('fs')
 
-bowerrc = JSON.parse(fs.readFileSync('.bowerrc'))
 server = lr()
 
 config =
@@ -46,10 +45,6 @@ config =
 	destClientScripts: 'app/public/scripts'
 	jsConcatTarget: 'main.js'
 	destServerScripts: 'app'
-
-	# bower
-	srcBower: bowerrc.directory + '/**/*'
-	destBower: 'app/public/scripts/components'
 
 	# plugins
 	# srcPlugins: 'src/assets/scripts/plugins/*.js'
@@ -120,12 +115,6 @@ gulp.task 'images', ->
 		.pipe(imagemin())
 		.pipe gulp.dest(config.destImg)
 
-# copy bower scripts
-# gulp.task 'bower', ->
-# 	gulp.src(config.srcBower)
-# 		# .pipe(embedlr())
-# 		.pipe(gulp.dest(config.destBower))
-# 		.pipe livereload(server, auto:false)
 
 # watch html
 gulp.task 'views', ->
@@ -158,7 +147,6 @@ gulp.task 'watch', (callback) ->
 
 	gulp.watch([config.srcCss, srcSass], ['styles'])._watcher.on 'all', livereload
 	# gulp.watch(config.srcPlugins, ['plugins'])._watcher.on 'all', livereload
-	# gulp.watch(config.srcBower, ['bower'])._watcher.on 'all', livereload
 	gulp.watch(config.srcClientScripts, ['clientScripts'])._watcher.on 'all', livereload
 	gulp.watch([config.srcAllScripts, '!' + config.srcClientScripts], ['serverScripts'])._watcher.on 'all', livereload
 	gulp.watch(config.srcViews, ['views'])._watcher.on 'all', livereload
@@ -169,7 +157,6 @@ gulp.task 'default', (callback) ->
 
 	runSequence 'clean', [
 		# 'plugins'
-		# 'bower'
 		'clientScripts'
 		'serverScripts'
 		'styles'
