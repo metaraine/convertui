@@ -10,8 +10,9 @@
     "url": "https://github.com/metaraine"
   },
   "engines": {
-    "node": "0.10.x"
+    "node": "^0.11.13"
   },
+  "engineStrict": true,
   "scripts": {
     "start": "node app/",
     "test": "./node_modules/mocha/bin/mocha",
