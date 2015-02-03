@@ -3,25 +3,16 @@
 
 > Node server and web front-end for arbitrary data conversion.
 
-
-## Install
-
+## Development
 ```sh
+$ npm run nodemon
 ```
-
-
-## Usage
-
-```js
-```
-
 
 ## Deploy
 
 ```sh
-heroku config:set RELIC_KEY=YOUR_LICENSE_KEY
+$ heroku config:set RELIC_KEY=YOUR_LICENSE_KEY
 ```
-
 
 ## License
 
