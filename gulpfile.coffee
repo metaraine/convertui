@@ -156,13 +156,13 @@ gulp.task 'open', ->
 
 gulp.task 'watch', (callback) ->
 
-	gulp.watch([config.srcSass, config.srcCss], ['styles']).Watcher.on 'all', livereload
-	# gulp.watch(config.srcPlugins, ['plugins']).Watcher.on 'all', livereload
-	# gulp.watch(config.srcBower, ['bower']).Watcher.on 'all', livereload
-	gulp.watch(config.srcClientScripts, ['clientScripts']).Watcher.on 'all', livereload
-	gulp.watch([config.srcAllScripts, '!' + config.srcClientScripts], ['serverScripts']).Watcher.on 'all', livereload
-	gulp.watch(config.srcViews, ['views']).Watcher.on 'all', livereload
-	gulp.watch(config.srcImg, ['images']).Watcher.on 'all', livereload
+	gulp.watch(config.srcSass, ['styles'])._watcher.on 'all', livereload
+	# gulp.watch(config.srcPlugins, ['plugins'])._watcher.on 'all', livereload
+	# gulp.watch(config.srcBower, ['bower'])._watcher.on 'all', livereload
+	gulp.watch(config.srcClientScripts, ['clientScripts'])._watcher.on 'all', livereload
+	gulp.watch([config.srcAllScripts, '!' + config.srcClientScripts], ['serverScripts'])._watcher.on 'all', livereload
+	gulp.watch(config.srcViews, ['views'])._watcher.on 'all', livereload
+	gulp.watch(config.srcImg, ['images'])._watcher.on 'all', livereload
 
 # default task -- run 'gulp' from cli
 gulp.task 'default', (callback) ->
