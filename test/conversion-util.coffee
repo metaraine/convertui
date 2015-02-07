@@ -7,6 +7,6 @@ conversionUtil = require('../app/conversion-util.js')(
 describe 'conversion-util', ->
 
 	describe 'findConverter', ->
-		it 'should find a converting with a matching input and output type', ->
+		it 'should find a converter with a matching input and output type', ->
 			converter = conversionUtil.findConverter('text', null, 'text', 'uppercase')
 			assert.ok(converter, 'finds the lowercase-to-uppercase converter with "text, text, uppercase"')

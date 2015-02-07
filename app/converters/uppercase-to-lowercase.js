@@ -3,6 +3,6 @@ module.exports = {
 	outputType: 'text',
 	outputTypeVariation: 'lowercase',
 	convert: function(input) {
-		input.toString().toLowerCase();
+		return input.toString().toLowerCase();;
 	}
 };
