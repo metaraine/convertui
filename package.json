@@ -16,16 +16,18 @@
   "scripts": {
     "start": "node app/",
     "nodemon": "nodemon -w src app/",
-    "test": "mocha",
+    "test": "mocha --compilers coffee:coffee-script/register",
     "browser": "browserify -s $npm_package_name -o browser.js .",
     "pingheroku": "heroku info -s | grep web_url | cut -d= -f2 | xargs -I{} curl {} -w '%{http_code}' -so /dev/null"
   },
   "dependencies": {
     "body-parser": "~1",
+    "cint": "^8.1.0",
     "express": "~4",
     "jade": "~1",
     "multer": "^0.1.7",
     "newrelic": "~1",
+    "require-directory": "^2.0.0",
     "rsvp": "^3.0.16"
   },
   "keywords": [
@@ -35,6 +37,7 @@
   ],
   "devDependencies": {
     "browserify": "~6",
+    "chai": "^1.10.0",
     "coffee-script": "~1",
     "event-stream": "^3.2.2",
     "gulp": "~3",

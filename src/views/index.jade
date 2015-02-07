@@ -6,35 +6,43 @@ block scripts
 	script(src='/scripts/main.min.js')
 
 block content
-	.page-header.box
-		h1 Convert _____ to ______
+	form#form-convert.form-horizontal(method='POST' action='/convert')
 
-	.container
+		.page-header.box
+			h1 Convert 
+				select(name='inputType')
+					for converter in converters
+						option(value=converter.inputType)= converter.inputType + (converter.inputTypeVariation ? ' (' + converter.inputTypeVariation + ')' : '')
+				|  to 
+				select(name='outputType')
+					for converter in converters
+						option(value=converter.outputType)= converter.outputType + (converter.outputTypeVariation ? ' (' + converter.outputTypeVariation + ')' : '')
+				| .
 
-		script#qq-template(type='text/template')
-			.qq-uploader-selector.qq-uploader
-				.qq-upload-drop-area-selector.qq-upload-drop-area(qq-hide-dropzone='')
-					span Drop files here to upload
-				.qq-upload-button-selector.qq-upload-button
-					div Upload a file
-				span.qq-drop-processing-selector.qq-drop-processing
-					span Processing dropped files...
-					span.qq-drop-processing-spinner-selector.qq-drop-processing-spinner
-				ul.qq-upload-list-selector.qq-upload-list
-					li
-						.qq-progress-bar-container-selector
-							.qq-progress-bar-selector.qq-progress-bar
-						span.qq-upload-spinner-selector.qq-upload-spinner
-						span.qq-edit-filename-icon-selector.qq-edit-filename-icon
-						span.qq-upload-file-selector.qq-upload-file
-						input.qq-edit-filename-selector.qq-edit-filename(tabindex='0', type='text')
-						span.qq-upload-size-selector.qq-upload-size
-						a.qq-upload-cancel-selector.qq-upload-cancel(href='#') Cancel
-						a.qq-upload-retry-selector.qq-upload-retry(href='#') Retry
-						a.qq-upload-delete-selector.qq-upload-delete(href='#') Delete
-						span.qq-upload-status-text-selector.qq-upload-status-text
+		.container
 
-		form#form-convert.form-horizontal(method='POST' action='/convert')
+			script#qq-template(type='text/template')
+				.qq-uploader-selector.qq-uploader
+					.qq-upload-drop-area-selector.qq-upload-drop-area(qq-hide-dropzone='')
+						span Drop files here to upload
+					.qq-upload-button-selector.qq-upload-button
+						div Upload a file
+					span.qq-drop-processing-selector.qq-drop-processing
+						span Processing dropped files...
+						span.qq-drop-processing-spinner-selector.qq-drop-processing-spinner
+					ul.qq-upload-list-selector.qq-upload-list
+						li
+							.qq-progress-bar-container-selector
+								.qq-progress-bar-selector.qq-progress-bar
+							span.qq-upload-spinner-selector.qq-upload-spinner
+							span.qq-edit-filename-icon-selector.qq-edit-filename-icon
+							span.qq-upload-file-selector.qq-upload-file
+							input.qq-edit-filename-selector.qq-edit-filename(tabindex='0', type='text')
+							span.qq-upload-size-selector.qq-upload-size
+							a.qq-upload-cancel-selector.qq-upload-cancel(href='#') Cancel
+							a.qq-upload-retry-selector.qq-upload-retry(href='#') Retry
+							a.qq-upload-delete-selector.qq-upload-delete(href='#') Delete
+							span.qq-upload-status-text-selector.qq-upload-status-text
 
 			.row
 				.col-xs-12

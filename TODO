@@ -1,0 +1,15 @@
+ ☐ Convert csv-to-json.coffee to javascript
+ ☐ Can a friendly short name be parsed from
+ ☐ Multiple types
+ ☐	Validate conversions
+ ☐ Tests
+ ☐ x to y to z
+	 Standardized MIME types with variation field to allow transitive conversions
+ ☐ binary
+ ☐ Example conversions
+ ☐ Easily create new converter with a pull request
+ ☐ ConversionErrors
+ ☐ Remove unused material design icons
+ ☐ API
+ ☐ Write initial contribution instructions
+ ☐ Change name to x-to-y
