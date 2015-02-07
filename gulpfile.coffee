@@ -39,7 +39,8 @@ config =
 	cssConcatTarget: 'out.css'
 
 	# scripts
-	srcAllScripts: 'src/**/*.coffee'
+	srcAllJs: 'src/**/*.js'
+	srcAllCoffee: 'src/**/*.coffee'
 	srcClientScripts: 'src/public/**/*.coffee'
 	srcClientExclude: '!public/**/*.coffee'
 	destClientScripts: 'app/public/scripts'
@@ -86,11 +87,15 @@ gulp.task 'clientScripts', ->
 
 # compile server-side coffeescript
 gulp.task 'serverScripts', ->
-	gulp.src(config.srcAllScripts)
+	js = gulp.src(config.srcAllJs)
+		.pipe(filter(['**/*', config.srcClientExclude]))
+	compiledCoffee = gulp.src(config.srcAllCoffee)
 		.pipe(filter(['**/*', config.srcClientExclude]))
 		.pipe(coffee().on('error', gutil.log))
 		# .pipe(jshint())
 		# .pipe(jshint.reporter('default'))
+
+	es.merge(js, compiledCoffee)
 		.pipe(gulp.dest(config.destServerScripts))
 		.pipe livereload(server, auto:false)
 
@@ -148,7 +153,7 @@ gulp.task 'watch', (callback) ->
 	gulp.watch([config.srcCss, config.srcSass], ['styles'])._watcher.on 'all', livereload
 	# gulp.watch(config.srcPlugins, ['plugins'])._watcher.on 'all', livereload
 	gulp.watch(config.srcClientScripts, ['clientScripts'])._watcher.on 'all', livereload
-	gulp.watch([config.srcAllScripts, '!' + config.srcClientScripts], ['serverScripts'])._watcher.on 'all', livereload
+	gulp.watch([config.srcAllJs, config.srcAllCoffee, '!' + config.srcClientScripts], ['serverScripts'])._watcher.on 'all', livereload
 	gulp.watch(config.srcViews, ['views'])._watcher.on 'all', livereload
 	gulp.watch(config.srcImg, ['images'])._watcher.on 'all', livereload
 
