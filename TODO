@@ -1,15 +1,35 @@
- ☐ Convert csv-to-json.coffee to javascript
- ☐ Can a friendly short name be parsed from
- ☐ Multiple types
+ ✔ Convert csv-to-json.coffee to javascript @done (15-02-07 16:33)
+ ✔	Sit down and figure out how MIME types, variations, and short names all work together @done (15-02-08 09:28)
+ 	A single, unique identifier will be used for each of the input and output types, called "from" and "to"
+ ☐	Replace input and output types with "from" and "to" properties
+ ☐	Use bootstrap dropdowns
+ ☐	ConversionErrors
+ ☐	Documentation
+	 ☐	Developer Friendly
+	 ☐	API
+	 ☐	Easily contribute a new converter with a pull request
+	 	☐	Example 1: text-to-uppercase
+	 	☐	Example 2: csv-to-json
+	 	☐	Tests
+ 		☐	Converter Properties
+ 			☐	from
+ 			☐	to
+ 			☐	lossy
+ 			☐	convert
+ 			☐	description
+		☐	Errors
+	 	☐	Options
+ ☐	Auto-generate options form
+ ☐	Web sockets
+ ☐	Change name to x-to-y
+ ✔	Can a friendly short name be parsed from MIME types? @done (15-02-08 08:25)
+ 	Not always (iCalendar, PowerPoint, Wunderlist)
+ ☐	Multiple types
+ ☐	Add lossy:false converter property
+ ☐	Convert jQuery to angular or react
  ☐	Validate conversions
- ☐ Tests
- ☐ x to y to z
-	 Standardized MIME types with variation field to allow transitive conversions
- ☐ binary
- ☐ Example conversions
- ☐ Easily create new converter with a pull request
- ☐ ConversionErrors
- ☐ Remove unused material design icons
- ☐ API
- ☐ Write initial contribution instructions
- ☐ Change name to x-to-y
+ ✔	Tests @done (15-02-07 16:32)
+ ☐	Transitivity: x to y to z
+	Standardized MIME types with variation field to allow transitive conversions
+ ☐	binary
+ ☐	Remove unused material design icons
