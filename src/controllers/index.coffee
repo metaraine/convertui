@@ -1,3 +1,5 @@
+_ = require('lodash')
+cint = require('cint')
 requireDirectory = require('require-directory')
 converters = requireDirectory(module, '../converters')
 conversionUtil = require('../conversion-util.js')(converters)
@@ -6,6 +8,8 @@ module.exports =
 	index: (req, res)->
 		res.render 'index',
 			converters: converters
+			inputTypes: _.unique(cint.values(converters), (name, converter)->
+				converter.inputType
 
 	convert: (req, res)->
 		input = req.body.input

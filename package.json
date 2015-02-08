@@ -25,6 +25,7 @@
     "cint": "^8.1.0",
     "express": "~4",
     "jade": "~1",
+    "lodash": "^3.1.0",
     "multer": "^0.1.7",
     "newrelic": "~1",
     "require-directory": "^2.0.0",
