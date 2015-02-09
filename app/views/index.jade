@@ -12,10 +12,10 @@ block content
 		.page-header.box
 			h1 Convert 
 				span.dropdown.btn-group
-					button#from.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown', aria-expanded='true')
-							| __________ 
+					button#from.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown', aria-expanded='true')= from || '__________'
+							|  
 							span.caret
-					input.dropdown-value(type='hidden' name='from')
+					input.dropdown-value(type='hidden' name='from' value=from)
 					ul.dropdown-menu(role='menu', aria-labelledby='from')
 						for from in fromTypes
 							li(role='presentation')
@@ -23,10 +23,10 @@ block content
 
 				|  to 
 				span.dropdown.btn-group
-					button#to.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown', aria-expanded='true')
-							| __________ 
+					button#to.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown', aria-expanded='true')= to || '__________'
+							|  
 							span.caret
-					input.dropdown-value(type='hidden' name='to')
+					input.dropdown-value(type='hidden' name='to' value=to)
 					ul.dropdown-menu(role='menu', aria-labelledby='from')
 						for to in toTypes
 							li(role='presentation')

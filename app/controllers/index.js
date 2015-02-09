@@ -18,7 +18,9 @@
       return res.render('index', {
         converters: converters,
         fromTypes: fromTypes,
-        toTypes: toTypes
+        toTypes: toTypes,
+        from: req.params[0],
+        to: req.params[1]
       });
     },
     convert: function(req, res) {

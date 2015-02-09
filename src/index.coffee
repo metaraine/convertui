@@ -12,6 +12,7 @@ app.use bodyParser.urlencoded extended:false
 app.use multer inMemory:true
 
 app.get '/', indexController.index
+app.get /^\/(.*)-to-(.*)/, indexController.index
 app.post '/convert', indexController.convert
 app.post '/upload', indexController.upload
 

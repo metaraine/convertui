@@ -21,6 +21,8 @@ module.exports =
 			converters: converters
 			fromTypes: fromTypes
 			toTypes: toTypes
+			from: req.params[0] # matches the "x" capture group in the "/x-to-y" route
+			to: req.params[1]		# matches the "y" capture group in the "/x-to-y" route
 
 	convert: (req, res)->
 		input = req.body.input
