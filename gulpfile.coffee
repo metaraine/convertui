@@ -1,5 +1,8 @@
+_ = 					 require('lodash')
 gulp =         require('gulp')
 gutil =        require('gulp-util')
+plumber =      require('gulp-plumber')
+notify = 			 require("gulp-notify")
 coffee =       require('gulp-coffee')
 http =         require('http')
 runSequence =  require('run-sequence')
@@ -23,6 +26,7 @@ lr =           require('tiny-lr')
 fs = 					 require('fs')
 
 server = lr()
+notifyOnError = notify.onError("<%= error.message %>")
 
 config =
 	httpPort: 9882
@@ -76,6 +80,7 @@ gulp.task 'styles', ->
 # compile client-side coffeescript, concat, & minify js
 gulp.task 'clientScripts', ->
 	gulp.src(config.srcClientScripts)
+		.pipe(plumber(errorHandler: notifyOnError))
 		.pipe(coffee().on('error', gutil.log))
 		.pipe(concat(config.jsConcatTarget))
 		.pipe(ngAnnotate())
@@ -91,6 +96,7 @@ gulp.task 'serverScripts', ->
 		.pipe(filter(['**/*', config.srcClientExclude]))
 	compiledCoffee = gulp.src(config.srcAllCoffee)
 		.pipe(filter(['**/*', config.srcClientExclude]))
+		.pipe(plumber(errorHandler: notifyOnError))
 		.pipe(coffee().on('error', gutil.log))
 		# .pipe(jshint())
 		# .pipe(jshint.reporter('default'))

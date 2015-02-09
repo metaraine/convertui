@@ -1,16 +1,13 @@
 module.exports = (converters)->
 
 	# search for a converter that matches the given input and output type
-	findConverter: (inputType, inputTypeVariation, outputType, outputTypeVariation)->
+	findConverter: (from, to)->
 
-		# if there are only two arguments, treat the second argument as outputType
-		args = arguments
-		if arguments.length <= 2
-			outputType = arguments[1]
+		if !from
+			throw new Error("Must specify a \"from\" type. Received #{from}.")
+		else if !to
+			throw new Error("Must specify a \"to\" type. Received #{to}.")
 
 		for name, converter of converters
-			if inputType.match(converter.inputType) and
-					outputType.match(converter.outputType) and
-					(!inputTypeVariation or inputTypeVariation.match(converter.inputTypeVariation)) and
-					(!outputTypeVariation or outputTypeVariation.match(converter.outputTypeVariation))
+			if from.match(converter.from) and to.match(converter.to)
 				return converter

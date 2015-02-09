@@ -1,32 +1,41 @@
 _ = require('lodash')
-cint = require('cint')
 requireDirectory = require('require-directory')
 converters = requireDirectory(module, '../converters')
 conversionUtil = require('../conversion-util.js')(converters)
+
+fromTypes =_(converters)
+	.pluck('from')
+	.sort()
+	.uniq(true)
+	.value()
+
+toTypes =_(converters)
+	.pluck('to')
+	.sort()
+	.uniq(true)
+	.value()
 
 module.exports =
 	index: (req, res)->
 		res.render 'index',
 			converters: converters
-			inputTypes: _.unique(cint.values(converters), (name, converter)->
-				converter.inputType
+			fromTypes: fromTypes
+			toTypes: toTypes
 
 	convert: (req, res)->
 		input = req.body.input
-		inputType = req.body.inputType
-		outputType = req.body.outputType
-		inputTypeVariation = req.body.inputTypeVariation
-		outputTypeVariation = req.body.outputTypeVariation
+		from = req.body.from
+		to = req.body.to
 
 		# wrap in a promise to handle Promises or scalar values
 		promisedOutput = new Promise (resolve, reject)->
 
-			converter = conversionUtil.findConverter inputType, inputTypeVariation, outputType, outputTypeVariation
+			converter = conversionUtil.findConverter from, to
 
 			if converter
 				resolve converter.convert(input)
 			else
-				throw new Error "Converter not defined for inputType: #{inputType}, inputTypeVariation: #{inputTypeVariation}, outputType: #{outputType}, outputTypeVariation: #{outputTypeVariation}"
+				throw new Error "Converter not defined for #{from}-to-#{to}"
 
 		promisedOutput.then (value)->
 			res.send value

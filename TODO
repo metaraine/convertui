@@ -1,7 +1,7 @@
  ✔ Convert csv-to-json.coffee to javascript @done (15-02-07 16:33)
  ✔	Sit down and figure out how MIME types, variations, and short names all work together @done (15-02-08 09:28)
  	A single, unique identifier will be used for each of the input and output types, called "from" and "to"
- ☐	Use bootstrap dropdowns
+ ✔	Use bootstrap dropdowns @done (15-02-08 16:36)
  ☐	Replace input and output types with "from" and "to" properties
  ☐	ConversionErrors
  ☐	Documentation

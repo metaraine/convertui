@@ -94,18 +94,22 @@ body {
 span.dropdown {
   display: inline-block; }
 
+/* line 83, /Users/raine/projects/convertui/src/public/styles/main.sass */
+.btn {
+  border: 0; }
+
 /*************************
  * fineuploader overrides
  *************************/
-/* line 87, /Users/raine/projects/convertui/src/public/styles/main.sass */
+/* line 90, /Users/raine/projects/convertui/src/public/styles/main.sass */
 .qq-uploader {
   width: 105px; }
 
-/* line 90, /Users/raine/projects/convertui/src/public/styles/main.sass */
+/* line 93, /Users/raine/projects/convertui/src/public/styles/main.sass */
 .qq-upload-drop-area {
   background-color: #ef9a9a;
   width: auto; }
-  /* line 93, /Users/raine/projects/convertui/src/public/styles/main.sass */
+  /* line 96, /Users/raine/projects/convertui/src/public/styles/main.sass */
   .qq-upload-drop-area span {
     position: static;
     margin: 0;
@@ -113,10 +117,10 @@ span.dropdown {
     line-height: 36px;
     white-space: nowrap; }
 
-/* line 101, /Users/raine/projects/convertui/src/public/styles/main.sass */
+/* line 104, /Users/raine/projects/convertui/src/public/styles/main.sass */
 .qq-upload-list {
   display: none; }
 
-/* line 104, /Users/raine/projects/convertui/src/public/styles/main.sass */
+/* line 107, /Users/raine/projects/convertui/src/public/styles/main.sass */
 .qq-upload-list li.qq-upload-success {
   background-color: #ef9a9a; }

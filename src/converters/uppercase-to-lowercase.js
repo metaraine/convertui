@@ -1,7 +1,6 @@
 module.exports = {
-	inputType: 'text',
-	outputType: 'text',
-	outputTypeVariation: 'lowercase',
+	from: 'text',
+	to: 'lowercase',
 	convert: function(input) {
 		return input.toString().toLowerCase();;
 	}

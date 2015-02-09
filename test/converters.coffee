@@ -6,7 +6,7 @@ conversionUtil = require('../app/conversion-util.js')(converters)
 describe 'converters', ->
 
 	for name, converter of converters
-		it name + ' should have the required properties: convert, inputType, and outputType', ->
+		it name + ' should have the required properties: convert, from, and to', ->
 			assert.ok(converter.convert, 'should have a convert method')
-			assert.ok(converter.inputType, 'should have an inputType property')
-			assert.ok(converter.outputType, 'should have a outputType property')
+			assert.ok(converter.from, 'should have an from property')
+			assert.ok(converter.to, 'should have a to property')

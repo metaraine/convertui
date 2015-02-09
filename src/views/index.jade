@@ -11,24 +11,24 @@ block content
 
 		.page-header.box
 			h1 Convert 
-				span.dropdown
+				span.dropdown.btn-group
 					button#from.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown', aria-expanded='true')
 							| __________ 
 							span.caret
 					ul.dropdown-menu(role='menu', aria-labelledby='from')
-						for converter in converters
+						for from in fromTypes
 							li(role='presentation')
-								a(role='menuitem', tabindex='-1', href='#')= converter.inputType + (converter.inputTypeVariation ? ' (' + converter.inputTypeVariation + ')' : '')
+								a(role='menuitem', tabindex='-1', href='#')= from
 
 				|  to 
-				span.dropdown
+				span.dropdown.btn-group
 					button#to.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown', aria-expanded='true')
 							| __________ 
 							span.caret
 					ul.dropdown-menu(role='menu', aria-labelledby='from')
-						for converter in converters
+						for to in toTypes
 							li(role='presentation')
-								a(role='menuitem', tabindex='-1', href='#')= converter.outputType + (converter.outputTypeVariation ? ' (' + converter.outputTypeVariation + ')' : '')
+								a(role='menuitem', tabindex='-1', href='#')= to
 				| .
 
 		.container
