@@ -30,18 +30,23 @@ module.exports =
 		# wrap in a promise to handle Promises or scalar values
 		promisedOutput = new Promise (resolve, reject)->
 
+			if !from
+				return reject "No 'from' type specified"
+			else if !to
+				return reject "No 'to' type specified"
+
 			converter = conversionUtil.findConverter from, to
 
-			if converter
-				resolve converter.convert(input)
-			else
-				throw new Error "Converter not defined for #{from}-to-#{to}"
+			if !converter
+				return reject "Converter not defined for #{from}-to-#{to}"
+
+			resolve converter.convert(input)
 
 		promisedOutput.then (value)->
 			res.send value
 		, (error)->
-			console.error error.stack
-			res.status(500)
+			console.error error
+			res.status(500).send(error)
 
 	upload: (req, res)->
 

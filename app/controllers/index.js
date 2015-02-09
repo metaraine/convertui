@@ -28,18 +28,22 @@
       to = req.body.to;
       promisedOutput = new Promise(function(resolve, reject) {
         var converter;
-        converter = conversionUtil.findConverter(from, to);
-        if (converter) {
-          return resolve(converter.convert(input));
-        } else {
-          throw new Error("Converter not defined for " + from + "-to-" + to);
+        if (!from) {
+          return reject("No 'from' type specified");
+        } else if (!to) {
+          return reject("No 'to' type specified");
         }
+        converter = conversionUtil.findConverter(from, to);
+        if (!converter) {
+          return reject("Converter not defined for " + from + "-to-" + to);
+        }
+        return resolve(converter.convert(input));
       });
       return promisedOutput.then(function(value) {
         return res.send(value);
       }, function(error) {
-        console.error(error.stack);
-        return res.status(500);
+        console.error(error);
+        return res.status(500).send(error);
       });
     },
     upload: function(req, res) {
