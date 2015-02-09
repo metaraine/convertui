@@ -1,4 +1,3 @@
-_ = 					 require('lodash')
 gulp =         require('gulp')
 gutil =        require('gulp-util')
 plumber =      require('gulp-plumber')
@@ -122,7 +121,6 @@ gulp.task 'open', ->
 gulp.task 'watch', (callback) ->
 
 	gulp.watch([config.srcCss, config.srcSass], ['styles'])._watcher.on 'all', livereload
-	# gulp.watch(config.srcPlugins, ['plugins'])._watcher.on 'all', livereload
 	gulp.watch(config.srcClientScripts, ['clientScripts'])._watcher.on 'all', livereload
 	gulp.watch([config.srcAllJs, config.srcAllCoffee, '!' + config.srcClientScripts], ['serverScripts'])._watcher.on 'all', livereload
 	gulp.watch(config.views)._watcher.on 'all', livereload
