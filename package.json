@@ -1,7 +1,7 @@
 {
   "name": "convertui",
   "version": "0.0.0",
-  "description": "Node server and web front-end for arbitrary data conversion.",
+  "description": "Community-driven conversion-as-a-service.",
   "license": "ISC",
   "repository": "metaraine/convertui",
   "author": {
