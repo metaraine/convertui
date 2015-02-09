@@ -3,6 +3,7 @@
  	A single, unique identifier will be used for each of the input and output types, called "from" and "to"
  ✔	Use bootstrap dropdowns @done (15-02-08 16:36)
  ✔	Replace input and output types with "from" and "to" properties @done (15-02-09 00:33)
+ ☐	Change name to x-to-y
  ☐	Display ConversionErrors to user.
  ☐	history push state on dropdown change
  ☐	Developer Friendly
@@ -20,12 +21,13 @@
 		☐	Errors
 	 	☐	Options
  ☐	Footer links to all conversions
+ ☐	Make design more desktop friendly
+ 	☐	Large, side-by-side textareas
+ ☐	Web sockets with convert onInput
  ☐	Auto-generate options form
  	http://textalk.github.io/angular-schema-form
  	https://github.com/joshfire/jsonform
  	http://www.alpacajs.org
- ☐	Web sockets
- ☐	Change name to x-to-y
  ✔	Can a friendly short name be parsed from MIME types? @done (15-02-08 08:25)
  	Not always (iCalendar, PowerPoint, Wunderlist)
  ✔	Multiple types @done (15-02-08 10:05)
