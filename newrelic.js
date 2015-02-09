@@ -8,7 +8,7 @@ exports.config = {
   /**
    * Array of application names.
    */
-  app_name : ['generator-convertui'],
+  app_name : ['x-to-y'],
   /**
    * Your New Relic license key.
    */

@@ -1,5 +1,5 @@
-# convertui
-[![Build Status](https://travis-ci.org/metaraine/convertui.svg?branch=master)](https://travis-ci.org/metaraine/convertui)
+# x-to-y
+[![Build Status](https://travis-ci.org/metaraine/x-to-y.svg?branch=master)](https://travis-ci.org/metaraine/x-to-y)
 
 > Community-driven community-as-a-service.
 

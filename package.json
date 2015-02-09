@@ -1,9 +1,9 @@
 {
-  "name": "convertui",
+  "name": "x-to-y",
   "version": "0.0.0",
   "description": "Community-driven conversion-as-a-service.",
   "license": "ISC",
-  "repository": "metaraine/convertui",
+  "repository": "metaraine/x-to-y",
   "author": {
     "name": "Raine Lourie",
     "email": "raine@collegecoding.com",
