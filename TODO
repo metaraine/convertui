@@ -4,7 +4,7 @@
  ✔	Use bootstrap dropdowns @done (15-02-08 16:36)
  ✔	Replace input and output types with "from" and "to" properties @done (15-02-09 00:33)
  ☐	Display ConversionErrors to user.
- ☐	history push state
+ ☐	history push state on dropdown change
  ☐	Developer Friendly
 	 ☐	API
 	 ☐	Easily contribute a new converter with a pull request
