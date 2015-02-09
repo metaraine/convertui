@@ -3,8 +3,8 @@
  	A single, unique identifier will be used for each of the input and output types, called "from" and "to"
  ✔	Use bootstrap dropdowns @done (15-02-08 16:36)
  ✔	Replace input and output types with "from" and "to" properties @done (15-02-09 00:33)
- ☐	Change name to x-to-y
- ☐	Travis
+ ✔	Change name to x-to-y @done (15-02-09 01:38)
+ ☐	Fix Travis Build
  ☐	Display ConversionErrors to user.
  ☐	history push state on dropdown change
  ☐	Developer Friendly
