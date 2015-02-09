@@ -2,10 +2,10 @@
  ✔	Sit down and figure out how MIME types, variations, and short names all work together @done (15-02-08 09:28)
  	A single, unique identifier will be used for each of the input and output types, called "from" and "to"
  ✔	Use bootstrap dropdowns @done (15-02-08 16:36)
- ☐	Replace input and output types with "from" and "to" properties
- ☐	ConversionErrors
- ☐	Documentation
-	 ☐	Developer Friendly
+ ✔	Replace input and output types with "from" and "to" properties @done (15-02-09 00:33)
+ ☐	Display ConversionErrors to user.
+ ☐	history push state
+ ☐	Developer Friendly
 	 ☐	API
 	 ☐	Easily contribute a new converter with a pull request
 	 	☐	Example 1: text-to-uppercase
@@ -19,6 +19,7 @@
  			☐	description
 		☐	Errors
 	 	☐	Options
+ ☐	Footer links to all conversions
  ☐	Auto-generate options form
  	http://textalk.github.io/angular-schema-form
  	https://github.com/joshfire/jsonform

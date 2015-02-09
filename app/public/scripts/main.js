@@ -24,13 +24,24 @@
       });
       return false;
     });
-    return $('#reset').on('click', function() {
+    $('#reset').on('click', function() {
       $('#input-and-convert').slideDown();
       $('#output').animate({
         height: outputOuterHeight
       });
       $('#input').val('');
       $('#output').val('');
+      return false;
+    });
+    return $('.dropdown [role="menuitem"]').on('click', function() {
+      var button, dropdown, hidden, value;
+      dropdown = $(this).closest('.dropdown');
+      hidden = dropdown.find('.dropdown-value');
+      button = dropdown.find('button');
+      value = $(this).text();
+      button.html(value + ' <span class="caret"></span>');
+      hidden.val(value);
+      button.dropdown('toggle');
       return false;
     });
   });
