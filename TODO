@@ -4,7 +4,8 @@
  ✔	Use bootstrap dropdowns @done (15-02-08 16:36)
  ✔	Replace input and output types with "from" and "to" properties @done (15-02-09 00:33)
  ✔	Change name to x-to-y @done (15-02-09 01:38)
- ☐	Fix Travis Build
+ ✔	Fix Travis Build @done (15-02-22 12:36)
+ ☐	Write csv-to-json converter
  ☐	Display ConversionErrors to user.
  ☐	history push state on dropdown change
  ☐	Developer Friendly
