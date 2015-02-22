@@ -1,26 +1,12 @@
 _ = require('lodash')
-requireDirectory = require('require-directory')
-converters = requireDirectory(module, '../converters')
-conversionUtil = require('../conversion-util.js')(converters)
-
-fromTypes =_(converters)
-	.pluck('from')
-	.sort()
-	.uniq(true)
-	.value()
-
-toTypes =_(converters)
-	.pluck('to')
-	.sort()
-	.uniq(true)
-	.value()
+conversionUtil = require('../conversion-util.js')
 
 module.exports =
 	index: (req, res)->
 		res.render 'index',
-			converters: converters
-			fromTypes: fromTypes
-			toTypes: toTypes
+			converters: conversionUtil.getConverters()
+			fromTypes: conversionUtil.getFromTypes()
+			toTypes: conversionUtil.getToTypes()
 			from: req.params[0] # matches the "x" capture group in the "/x-to-y" route
 			to: req.params[1]		# matches the "y" capture group in the "/x-to-y" route
 
