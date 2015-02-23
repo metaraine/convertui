@@ -8,6 +8,7 @@
  ✔	Write csv-to-json converter @done (15-02-22 12:43)
  ✔	Abstract converter storage, searching, and types from the controller @done (15-02-22 12:58)
  ☐	Display ConversionErrors to user.
+ ☐	Make use case for inContext from lodash
  ☐	history push state on dropdown change
  ☐	API
  	☐	Versioned /api/v0/

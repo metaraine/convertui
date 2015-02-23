@@ -21,6 +21,7 @@ embedlr =      require('gulp-embedlr')
 filter =       require('gulp-filter')
 ngAnnotate =   require('gulp-ng-annotate')
 lr =           require('tiny-lr')
+del =          require('del')
 fs = 					 require('fs')
 
 server = lr()

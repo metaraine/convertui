@@ -3,13 +3,12 @@ _ =                require('lodash')
 requireDirectory = require('require-directory')
 
 # get the converter modules
-converterModules = requireDirectory(module, '../converters')
+converterModules = requireDirectory(module, './converters')
 
 # normalize the converter modules, since some may be arrays and some may be single modules
-converters = _.flatten cint.toObject converterModules, (filename, converter)->
-	_.isArray(converter.convert) ? converter :
-	converter.convert ? [converter] :
-	throw new Error('Invalid converter. Converter module must return an object with from, to, and convert properties, or an array of such objects.')
+# (accumulator, converter)->accumulator.concat(converter)
+concat2 = cint.aritize(cint.inContext(Array.prototype.concat), 2)
+converters = _.reduce converterModules, concat2
 
 # get the unique from and to types
 fromTypes = _(converters)
@@ -26,8 +25,8 @@ toTypes = _(converters)
 
 module.exports =
 
-	getFromTypes:  _.constant(fromTypes),
-	getToTypes:    _.constant(toTypes),
+	getFromTypes:  _.constant(fromTypes)
+	getToTypes:    _.constant(toTypes)
 	getConverters: _.constant(converters)
 
 	# search for a converter that matches the given input and output type

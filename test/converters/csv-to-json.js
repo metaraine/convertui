@@ -19,9 +19,11 @@ describe('csv-to-json', function() {
 			{ name: 'phill', age: '27', city: 'boulder' }
 		]);
 
-		assert.equal(converter[0].convert(csv, { headers: ['name', 'age', 'city' }), json, 'headers as array');
+		var output = converter[0].convert(csv, { headers: ['name', 'age', 'city'] })
+		assert.equal(output, json, 'headers as array');
 
-		assert.equal(converter[0].convert(csv, { headers: 'name,age,city' }), json, 'headers as string');
+		var output = converter[0].convert(csv, { headers: 'name,age,city' })
+		assert.equal(output, json, 'headers as string');
 	});
 
 });
