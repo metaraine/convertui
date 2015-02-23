@@ -12,7 +12,6 @@ minifycss =    require('gulp-minify-css')
 jshint =       require('gulp-jshint')
 rename =       require('gulp-rename')
 uglify =       require('gulp-uglify')
-clean =        require('gulp-rimraf')
 concat =       require('gulp-concat')
 imagemin =     require('gulp-imagemin')
 cache =        require('gulp-cache')
@@ -102,15 +101,14 @@ gulp.task 'images', ->
 		.pipe(imagemin())
 		.pipe gulp.dest(config.destImg)
 
-# clean '.dist/'
-gulp.task 'clean', ->
-	gulp.src([
+# clean
+gulp.task 'clean', (cb)->
+	del([
 		config.destCss,
 		'app/*.js',
 		'app/controllers/*.js',
 		'app/public/scripts/*.js'
-	], read: false)
-	.pipe clean()
+	], cb)
 
 # site launcher
 gulp.task 'open', ->
